@@ -1,80 +1,49 @@
+# Personal Financial Control Project
 
-## Projeto de Controle Financeiro Pessoal
+The objective of this project is to record, analyze, and monitor personal financial status, enabling effective expense management and cash flow tracking.
 
-O objetivo desse projeto é realizar o registro, análise e monitoramento da situação financeira pessoal, de modo que possibilite o controle de gastos e acompanhamento dos fluxos.
+The records are divided into:
 
-Para isso, o registro é divido em:
-
-1. **ENTRADAS** Recebimento de salários e demais transferências;
-2. **SAÍDAS** Gastos e pagamentos realizados, via cartão de crédito ou débito, como PIX.
-3. **SALDO** diferença temporal entre as entradas e saídas registradas.
-
----
-
-
-## Entradas 📈
-
-Dados registrados:
-
-1. **Data** - DD/MM/AAAA - Data do recebimento;
-2. **Origem** - Texto - Insituição, empresa ou pessoa de origem;
-3. **Tipo** - Texto - Categoria da entrada;
-4. **Descricao** - Texto - Demais informações relevantes;
-5. **Periodo** - MM/AAAA - Data referência da entrada;
-6. **Valor** - R$ XX,XX - Valor da entrada.
+1. **INCOME** 💵 - Receipts from salaries and other transfers;
+2. **EXPENSES** 💸 - Payments and spending made using credit or debit cards, such as PIX;
+3. **BALANCE** ⚖️ - The temporal difference between recorded income and expenses.
 
 ---
 
-## Saídas 📉
+## 📈 Income
 
-Dados registrados:
+Recorded data:
 
-1. **Data** - DD/MM/AAAA - Data do gasto;
-2. **Hora** - HH:MM - Horário do gasto;
-3. **Categoria** - Texto - Categoria do gasto para a sua classificação;
-4. **Frequencia** - Texto - Categoria da recorrência, como fixo para um parcelamento ou variado para qualquer outra compra;
-5. **Tipo** - Texto - Categoria da fonte de saída, como crédito ou débito;
-6. **Fonte** - Texto - Instituição de origem do pagamento, para crédito, ou PIX ou dinheiro;
-7. **Local** - Texto - Local, loja, empresa etc. para registrar onde o gasto foi realizado;
-8. **Item** - Texto - Produto ou serviço adquirido ou pago;
-9.  **Descricao** - Texto - Demais informações relevantes;
-10.  **Valor** - R$ XX,XX - Valor da unidade;
-11.  **Quantidade** - Número - Quantidade de produto adquirida ou valor com desconto, por exemplo;
-12.  **Total** - R$ XX,XX - Valor resultante de Valor x Quantidade.
+1. **Date** - Date - Date of receipt  
+2. **Source** - String - Institution, company, or person of origin  
+3. **Category** - String - Income category  
+4. **Start_Date** - Date - Reference period (start)  
+5. **End_Date** - Date - Reference period (end)  
+6. **Amount** - Float - Amount of the income  
 
 ---
 
-## Saldo 💵
+## 📉 Expenses
 
-Resultante do cruzamento entre os dados de Entradas 📈 e Saídas 📉.
+Recorded data:
 
-Para garantir a não entrada em dívidas, é necessário gastar menos do que se entra mensalmente, tendo um saldo positivo.
-
-**Nota** Os valores gastos com Tipo de Crédito, em uma mês X, tendem a ser pagos de fato, via Débito pelo pagamento da fatura, no mês X+1. Nesse caso, a análise de balanço real é realizada por meio do acúmulo dos gastos entre as datas de fatura aberta, com o pagamento na data determinada.
-
----
-
-## Dashboard 📊
-
-Em desenvolvimento [...]
-
----
-
-## Análise anual 🐍
-
-Em melhoria [...]
+1. **Date** - Date - Date of the expense  
+2. **Time** - Hour - Time of the expense  
+3. **Category** - String - Expense category for classification  
+4. **Type** - String - Recurrence category, such as fixed, installment, or variable for any other  
+5. **Source** - String - Credit or debit  
+6. **Sub_Source** - String - Card or specific payment method  
+7. **Location** - String - Place, store, or company where the expense was made  
+8. **Item** - String - Product or service acquired or paid  
+9. **Description** - String - Additional relevant information  
+10. **Unit_Price** - Float - Unit price  
+11. **Quantity** - Float - Quantity of product acquired or value with discount, for example  
+12. **Total_Amount** - Float - Resulting value from Unit Price x Quantity  
 
 ---
 
-## Tecnologias utilizadas 💻
+## 💵 Balance
 
-<img alt="Python" src="https://img.shields.io/badge/-Python-3776AB?style=flat-square&logo=python&logoColor=white" />
+Resulting from the intersection of Income 📈 and Expenses 📉 data.
 
-<img alt="SQL" src="https://img.shields.io/badge/-MySQL-3776AB?style=flat-square&logo=mysql&logoColor=white&labelColor=%23D71F00&color=%23D71F00" />
-
-<img alt="Excel" src="https://img.shields.io/badge/-Excel-3776AB?style=flat-square&logo=microsoftexcel&labelColor=%23217346&color=%23217346" />
-
-
-<img alt="PowerBI" src="https://img.shields.io/badge/-PowerBI-3776AB?style=flat-square&logo=powerbi&logoColor=%23000000&labelColor=%23F2C811&color=%23F2C811" />
-
----
+**Note**: Expenses with Credit Type in month X are usually paid in fact via Debit when the bill is paid in month X+1. In this case, the real balance analysis is done by accumulating expenses between the open bill dates, with payment on
